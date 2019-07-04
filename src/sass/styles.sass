@@ -1,0 +1,300 @@
+@import "fontawesome-free/css/all.css"
+@import "menu-mobile"
+
+$bg-accent: #1f1e1e
+$bg-content: #364d80
+$bg-item: #c03b2d
+$bg-sidebar-1: #673ab7
+$bg-sidebar-2: #673ab7
+$bg-header: #333
+$bg-footer: #333
+
+@font-face
+    font-family: OpenSans
+    src: url('../fonts/OpenSans-Regular.ttf')
+
+body
+  min-height: 100vh
+  background: #000
+  padding: 1em
+  position: relative
+
+header, main, section, aside, footer
+  margin: 0
+  padding: 1em
+  border: 1px solid #000
+  color: #ffffff
+  border-radius: 10px
+
+main, footer
+  padding: 1em 0
+
+a
+  color: #fff
+  text-decoration: none
+  transition: color 0.3s ease
+  &:hover, &.active
+    color: #fabc3d
+
+ul
+  list-style: none
+  padding-left: 0
+
+.bg-accent
+  background: $bg-accent
+  border-radius: 10px
+  padding: .2rem .4rem
+
+.heading
+  display: inline-block
+
+input, button
+  width: 100%
+  padding: .7em
+  margin: .3em 0
+  box-sizing: border-box
+
+.social-icons
+  display: flex
+  flex-wrap: wrap
+  list-style: none
+  padding: 0
+  align-items: center
+  
+  .icon
+    display: block
+    padding: 0 1em
+    font-size: 1.2em
+.search
+  .icon
+    display: block
+    padding: 0 1em
+    font-size: 1.2em
+    
+
+.header
+    background: $bg-header
+    grid-area: header
+    display: flex
+    flex-wrap: wrap
+    .header-left
+      flex: 0 0 100%
+      text-align: center
+      display: flex
+      flex-flow: row wrap
+      justify-content: center
+      align-items: center
+      .logo
+        max-height: 100px
+        margin-right: 1em
+      .sitename
+        color: #ffffff
+
+    .header-right
+      flex: 1
+      .header-right-top
+        display: flex
+        justify-content: flex-end
+      .search, .social ul
+        margin: 1em 0
+      .search
+        text-align: right
+      .social
+        display: none 
+        padding-left: 2em
+      .menu 
+        display: none
+        ul
+          display: flex
+          list-style: none
+          justify-content: flex-end
+          li a
+            padding: .4em 1em
+            margin-left: .5em
+      .menu-mobile
+        display: block
+
+.content
+  background: $bg-content
+  grid-area: content
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+  height: fit-content
+  .item
+    background: $bg-item
+    margin: 1em
+    width: 200px
+    max-width: 400px
+    display: flex
+    flex-flow: column
+    flex-basis: auto
+    flex-grow: 1
+    min-height: 200px
+    border-radius: 10px
+    .image
+      border-top-left-radius: 10px
+      border-top-right-radius: 10px
+      overflow: hidden
+      img
+        width: 100%
+        transition: transform .5s
+        border-top-left-radius: 10px
+        border-top-right-radius: 10px
+        &:hover
+          transform: scale(1.5)
+    .text
+      padding: 1em
+      display: flex
+      flex-flow: column
+      flex-grow: 1
+      .top
+        margin-bottom: .5em
+        .heading
+          display: inline-block
+          margin-right: 1em
+          margin-bottom: .4em
+          h3
+            margin: 0
+        .time
+          display: inline-block
+      .description
+        margin: .2em 0 1em
+        flex-grow: 1
+      .bottom
+        .rating
+          display: inline-block
+          margin-right: 1em
+          margin-bottom: .4em
+          i
+            cursor: pointer
+        .comments-count
+          display: inline-block
+          
+          cursor: pointer
+          
+
+
+
+
+
+
+.sidebar
+  border: 1px solid #000
+  &.sidebar-1
+    grid-area: sidebar-1
+    background: $bg-sidebar-1
+  &.sidebar-2
+    grid-area: sidebar-2
+    background: $bg-sidebar-2
+  .side-section
+    margin: 2em 0
+  .author-info
+    .photo
+      max-width: 300px
+      width: 100%
+  .recent-comments
+    .item
+      display: flex
+      .avatar
+        flex: 0 0 2.9em
+        img
+          object-fit: cover
+          width: 100%
+          height: 2.9em
+      .text
+        font-size: .9em
+        padding: .2em
+        padding-left: .7em
+        display: flex
+        flex-flow: row wrap
+        align-content: flex-start
+        overflow: hidden
+        h4
+          margin: 0
+        .time
+          margin-left: .5em
+        .comment-text
+          margin: .3em 0
+          overflow: hidden
+          white-space: nowrap
+          text-overflow: ellipsis
+          width: 100%
+  .social a
+    font-size: 2em
+  .search
+    .search-form
+      .row
+        display: flex
+        button
+          flex: 0 1 3em
+          min-width: 3em
+  .tags
+    .tags-cloud
+      text-align: center
+  
+
+
+.footer
+  border: 1px solid #000
+  background: $bg-footer
+  grid-area: footer
+  .flex-container
+    display: flex
+    justify-content: space-between
+    .flex-item
+      //flex-grow: 1
+      //flex-basis: 0
+      margin: 1em
+      max-width: 33%
+  .logo
+    width: 100%
+    max-width: 150px
+  .footer-menu
+    li
+      margin: 1em 0
+  
+  .copy
+    font-size: small
+    text-align: center
+    margin: 0 auto
+
+
+.wrapper
+    display: grid
+    grid-gap: 1em
+    grid-template-areas: "header" "sidebar-1" "content" "sidebar-2" "footer"
+    
+
+
+@media (min-width: 768px)
+  .wrapper
+    grid-template-areas: "header header" "content sidebar-1" "content sidebar-2" "footer footer"
+    grid-template-columns: 2fr 1fr
+    grid-template-rows: auto auto 1fr auto
+  
+  .header
+    .menu-mobile
+      display: none
+    .header-left
+      flex: 0 1 50%
+      text-align: left
+      display: flex
+      justify-content: flex-start
+    .header-right
+      .social
+        display: flex
+      .menu
+        display: block
+
+// Animations
+.logo
+  animation: spin 4s linear infinite
+
+@keyframes spin
+  100%
+    transform: rotate(360deg)
+
+    
+  
+  
