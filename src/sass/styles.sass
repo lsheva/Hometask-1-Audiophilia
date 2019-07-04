@@ -16,7 +16,7 @@ $bg-footer: #333
 body
   min-height: 100vh
   background: #000
-  padding: 0
+  padding: 1em
   margin: 0
   position: relative
   
@@ -256,12 +256,11 @@ input, button
   background: $bg-footer
   .flex-container
     display: flex
+    flex-flow: row wrap
     justify-content: space-between
     .flex-item
-      //flex-grow: 1
-      //flex-basis: 0
       margin: 1em
-      max-width: 33%
+      
   .logo
     width: 100%
     max-width: 150px
@@ -283,6 +282,9 @@ input, button
 
 
 @media (min-width: 768px)
+  body
+    padding: 0em
+
   .wrapper
     grid-template-areas: "header header header header" ". content sidebar-1 ." ". content sidebar-2 ." "footer footer footer footer"
     //grid-template-columns: 2fr 1fr
@@ -302,6 +304,10 @@ input, button
         display: flex
       .menu
         display: block
+  
+  .footer
+    .flex-item
+      max-width: 33%
 
 // Animations
 .logo
