@@ -91,6 +91,10 @@ gulp.task("fonts", function() {
     .pipe(gulp.dest("dist/css/fontawesome-free/"));
 });
 
+gulp.task("audio", function() {
+  return gulp.src("src/audio/**/*.*").pipe(gulp.dest("dist/audio/"));
+});
+
 gulp.task("code", function() {
   return gulp
     .src("src/**/*.+(html|php)")
@@ -121,6 +125,7 @@ gulp.task(
     "images",
     "browser-sync",
     "watch",
-    "fonts"
+    "fonts",
+    "audio"
   )
 );
