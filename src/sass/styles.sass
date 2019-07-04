@@ -16,8 +16,11 @@ $bg-footer: #333
 body
   min-height: 100vh
   background: #000
-  padding: 1em
+  padding: 0
+  margin: 0
   position: relative
+  
+
 
 header, main, section, aside, footer
   margin: 0
@@ -39,6 +42,10 @@ a
 ul
   list-style: none
   padding-left: 0
+
+.container
+  max-width: 1200px
+  margin: 0 auto
 
 .bg-accent
   background: $bg-accent
@@ -71,10 +78,18 @@ input, button
     padding: 0 1em
     font-size: 1.2em
     
+.header-wrapper
+  grid-area: header
+  background: linear-gradient(to top, rgba(17,17,17,0) 0%, #0d204b 100%)
+  padding-top: 1em
+
+.footer-wrapper
+  grid-area: footer
+  background: linear-gradient(to bottom, rgba(17,17,17,0) 0%, #0d204b 100%)
+  padding-bottom: 1em
 
 .header
     background: $bg-header
-    grid-area: header
     display: flex
     flex-wrap: wrap
     .header-left
@@ -221,7 +236,7 @@ input, button
           text-overflow: ellipsis
           width: 100%
   .social a
-    font-size: 2em
+    font-size: 1.5em
   .search
     .search-form
       .row
@@ -235,10 +250,10 @@ input, button
   
 
 
+
 .footer
   border: 1px solid #000
   background: $bg-footer
-  grid-area: footer
   .flex-container
     display: flex
     justify-content: space-between
@@ -269,8 +284,9 @@ input, button
 
 @media (min-width: 768px)
   .wrapper
-    grid-template-areas: "header header" "content sidebar-1" "content sidebar-2" "footer footer"
-    grid-template-columns: 2fr 1fr
+    grid-template-areas: "header header header header" ". content sidebar-1 ." ". content sidebar-2 ." "footer footer footer footer"
+    //grid-template-columns: 2fr 1fr
+    grid-template-columns: 1fr minmax(auto, 890px) minmax(auto, 290px) 1fr
     grid-template-rows: auto auto 1fr auto
   
   .header

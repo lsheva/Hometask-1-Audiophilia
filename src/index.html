@@ -11,69 +11,73 @@
 
   <body>
     <div class="wrapper">
-      <header class="header">
-        <div class="header-left">
-          <img class="logo" src="images/logo.svg" alt="Audiophilia logo" />
-          <h1 class="sitename bg-accent">The Audiophilia</h1>
-        </div>
-        <nav role="navigation" class="menu-mobile">
-          <div id="menuToggle">
-            <!--
+      <div class="header-wrapper">
+        <div class="container">
+          <header class="header">
+            <div class="header-left">
+              <img class="logo" src="images/logo.svg" alt="Audiophilia logo" />
+              <h1 class="sitename bg-accent">The Audiophilia</h1>
+            </div>
+            <nav role="navigation" class="menu-mobile">
+              <div id="menuToggle">
+                <!--
                 A fake / hidden checkbox is used as click reciever,
                 so you can use the :checked selector on it.
                 -->
-            <input type="checkbox" />
-            <!--
+                <input type="checkbox" />
+                <!--
                 Some spans to act as a hamburger.
                 They are acting like a real hamburger,
                 not that McDonalds stuff.
                 -->
-            <span></span>
-            <span></span>
-            <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
 
-            <ul id="menu">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-        </nav>
+                <ul id="menu">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
 
-        <div class="header-right">
-          <div class="header-right-top">
-            <div class="search bg-accent">
-              <a href="#" class="icon"><i class="fas fa-search"></i></a>
+            <div class="header-right">
+              <div class="header-right-top">
+                <div class="search bg-accent">
+                  <a href="#" class="icon"><i class="fas fa-search"></i></a>
+                </div>
+                <div class="social">
+                  <ul class="social-icons bg-accent">
+                    <li>
+                      <a href="#" class="icon" target="_blank"
+                        ><i class="fab fa-facebook"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#" class="icon" target="_blank"
+                        ><i class="fab fa-instagram"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#" class="icon" target="_blank"
+                        ><i class="fab fa-twitter"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <nav role="navigation" class="menu">
+                <ul>
+                  <li><a href="#" class="bg-accent">Home</a></li>
+                  <li><a href="#" class="bg-accent">About</a></li>
+                  <li><a href="#" class="bg-accent">Contact</a></li>
+                </ul>
+              </nav>
             </div>
-            <div class="social">
-              <ul class="social-icons bg-accent">
-                <li>
-                  <a href="#" class="icon" target="_blank"
-                    ><i class="fab fa-facebook"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="#" class="icon" target="_blank"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="#" class="icon" target="_blank"
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <nav role="navigation" class="menu">
-            <ul>
-              <li><a href="#" class="bg-accent">Home</a></li>
-              <li><a href="#" class="bg-accent">About</a></li>
-              <li><a href="#" class="bg-accent">Contact</a></li>
-            </ul>
-          </nav>
+          </header>
         </div>
-      </header>
+      </div>
 
       <main class="content">
         <div class="item">
@@ -285,32 +289,41 @@
           </div>
         </div>
       </aside>
-
-      <footer class="footer">
-        <div class="flex-container">
-          <div class="flex-item">
-            <h3>The Audiophilia</h3>
-            <img class="logo" src="images/logo.svg" alt="Audiophilia logo" />
-          </div>
-          <div class="flex-item">
-            <h3>Address:</h3>
-            <p>Lviv, Khmelnytskoho st, 25, 43000</p>
-          </div>
-          <div class="flex-item">
-            <h3>Info:</h3>
-            <ul class="footer-menu">
-              <li><a href="#" class="bg-accent">Privacy</a></li>
-              <li>
-                <a href="#" class="bg-accent">Report copyright infringement</a>
-              </li>
-              <li><a href="#" class="bg-accent">Support</a></li>
-            </ul>
-          </div>
+      <div class="footer-wrapper">
+        <div class="container">
+          <footer class="footer">
+            <div class="flex-container">
+              <div class="flex-item">
+                <h3>The Audiophilia</h3>
+                <img
+                  class="logo"
+                  src="images/logo.svg"
+                  alt="Audiophilia logo"
+                />
+              </div>
+              <div class="flex-item">
+                <h3>Address:</h3>
+                <p>Lviv, Khmelnytskoho st, 25, 43000</p>
+              </div>
+              <div class="flex-item">
+                <h3>Info:</h3>
+                <ul class="footer-menu">
+                  <li><a href="#" class="bg-accent">Privacy</a></li>
+                  <li>
+                    <a href="#" class="bg-accent"
+                      >Report copyright infringement</a
+                    >
+                  </li>
+                  <li><a href="#" class="bg-accent">Support</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="copy">
+              <div class="bg-accent heading">&copy; 2019 The Audiophilia</div>
+            </div>
+          </footer>
         </div>
-        <div class="copy">
-          <div class="bg-accent heading">&copy; 2019 The Audiophilia</div>
-        </div>
-      </footer>
+      </div>
     </div>
   </body>
 </html>
